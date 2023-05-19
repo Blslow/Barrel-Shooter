@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerInput : MonoBehaviour
 {
     private PlayerInputActions playerInputActions;
-    private PlayerInputActions.PlayerMovementActions playerMovementActions;
+    private PlayerInputActions.PlayerActions playerActions;
 
     [Header("Events")]
     [SerializeField]
@@ -18,6 +18,8 @@ public class PlayerInput : MonoBehaviour
     private UnityEvent OnCrouchInput;
     [SerializeField]
     private UnityEvent OnSprintInput;
+    [SerializeField]
+    private UnityEvent OnShootInput;
 
     //[Header("Input Actions")]
     //[SerializeField]
@@ -28,37 +30,39 @@ public class PlayerInput : MonoBehaviour
     private void Awake()
     {
         playerInputActions = new();
-        playerMovementActions = playerInputActions.PlayerMovement;
+        playerActions = playerInputActions.Player;
     }
 
     private void OnEnable()
     {
-        playerMovementActions.Enable();
-        playerMovementActions.Jump.performed += Jump;
-        playerMovementActions.Crouch.performed += Crouch;
-        playerMovementActions.Crouch.canceled += Crouch;
-        playerMovementActions.Sprint.performed += Sprint;
-        playerMovementActions.Sprint.canceled += Sprint;
+        playerActions.Enable();
+        playerActions.Jump.performed += Jump;
+        playerActions.Crouch.performed += Crouch;
+        playerActions.Crouch.canceled += Crouch;
+        playerActions.Sprint.performed += Sprint;
+        playerActions.Sprint.canceled += Sprint;
+        playerActions.Shoot.performed += Shoot;
     }
 
     private void OnDisable()
     {
-        playerMovementActions.Disable();
-        playerMovementActions.Jump.performed -= Jump;
-        playerMovementActions.Crouch.performed -= Crouch;
-        playerMovementActions.Crouch.canceled -= Crouch;
-        playerMovementActions.Sprint.performed -= Sprint;
-        playerMovementActions.Sprint.canceled -= Sprint;
+        playerActions.Disable();
+        playerActions.Jump.performed -= Jump;
+        playerActions.Crouch.performed -= Crouch;
+        playerActions.Crouch.canceled -= Crouch;
+        playerActions.Sprint.performed -= Sprint;
+        playerActions.Sprint.canceled -= Sprint;
+        playerActions.Shoot.performed -= Shoot;
     }
 
     private void Update()
     {
-        OnMovementInput?.Invoke(playerMovementActions.Move.ReadValue<Vector2>().normalized);
+        OnMovementInput?.Invoke(playerActions.Move.ReadValue<Vector2>().normalized);
     }
 
     private void LateUpdate()
     {
-        OnLookInput?.Invoke(playerMovementActions.Look.ReadValue<Vector2>().normalized);
+        OnLookInput?.Invoke(playerActions.Look.ReadValue<Vector2>().normalized);
     }
 
     private void Jump(InputAction.CallbackContext obj)
@@ -74,5 +78,10 @@ public class PlayerInput : MonoBehaviour
     private void Sprint(InputAction.CallbackContext obj)
     {
         OnSprintInput?.Invoke();
+    }
+
+    private void Shoot(InputAction.CallbackContext obj)
+    {
+        OnShootInput?.Invoke();
     }
 }

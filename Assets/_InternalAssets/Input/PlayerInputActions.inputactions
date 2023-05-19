@@ -2,7 +2,7 @@
     "name": "PlayerInputActions",
     "maps": [
         {
-            "name": "PlayerMovement",
+            "name": "Player",
             "id": "24e67cbc-2858-40af-bfb8-a7cedb544700",
             "actions": [
                 {
@@ -45,6 +45,15 @@
                     "name": "Sprint",
                     "type": "Button",
                     "id": "e818ddc4-76ac-4335-8a59-19dee450f8fd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "2fa8a5ce-27e9-4e11-8b70-d369db4b2db8",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -302,6 +311,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e0510c77-71a3-430c-a2a4-3c668b5e9976",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a9faeb25-4336-4a81-bb94-0cc74ad07275",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c6049d2-a8c4-4bf3-8e3b-03e7fb3ef2fe",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

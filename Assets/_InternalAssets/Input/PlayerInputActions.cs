@@ -24,7 +24,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     ""name"": ""PlayerInputActions"",
     ""maps"": [
         {
-            ""name"": ""PlayerMovement"",
+            ""name"": ""Player"",
             ""id"": ""24e67cbc-2858-40af-bfb8-a7cedb544700"",
             ""actions"": [
                 {
@@ -67,6 +67,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""name"": ""Sprint"",
                     ""type"": ""Button"",
                     ""id"": ""e818ddc4-76ac-4335-8a59-19dee450f8fd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""2fa8a5ce-27e9-4e11-8b70-d369db4b2db8"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -326,19 +335,53 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e0510c77-71a3-430c-a2a4-3c668b5e9976"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a9faeb25-4336-4a81-bb94-0cc74ad07275"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c6049d2-a8c4-4bf3-8e3b-03e7fb3ef2fe"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
     ],
     ""controlSchemes"": []
 }");
-        // PlayerMovement
-        m_PlayerMovement = asset.FindActionMap("PlayerMovement", throwIfNotFound: true);
-        m_PlayerMovement_Move = m_PlayerMovement.FindAction("Move", throwIfNotFound: true);
-        m_PlayerMovement_Jump = m_PlayerMovement.FindAction("Jump", throwIfNotFound: true);
-        m_PlayerMovement_Look = m_PlayerMovement.FindAction("Look", throwIfNotFound: true);
-        m_PlayerMovement_Crouch = m_PlayerMovement.FindAction("Crouch", throwIfNotFound: true);
-        m_PlayerMovement_Sprint = m_PlayerMovement.FindAction("Sprint", throwIfNotFound: true);
+        // Player
+        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
+        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
+        m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
+        m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
+        m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -395,49 +438,54 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // PlayerMovement
-    private readonly InputActionMap m_PlayerMovement;
-    private IPlayerMovementActions m_PlayerMovementActionsCallbackInterface;
-    private readonly InputAction m_PlayerMovement_Move;
-    private readonly InputAction m_PlayerMovement_Jump;
-    private readonly InputAction m_PlayerMovement_Look;
-    private readonly InputAction m_PlayerMovement_Crouch;
-    private readonly InputAction m_PlayerMovement_Sprint;
-    public struct PlayerMovementActions
+    // Player
+    private readonly InputActionMap m_Player;
+    private IPlayerActions m_PlayerActionsCallbackInterface;
+    private readonly InputAction m_Player_Move;
+    private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_Look;
+    private readonly InputAction m_Player_Crouch;
+    private readonly InputAction m_Player_Sprint;
+    private readonly InputAction m_Player_Shoot;
+    public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
-        public PlayerMovementActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_PlayerMovement_Move;
-        public InputAction @Jump => m_Wrapper.m_PlayerMovement_Jump;
-        public InputAction @Look => m_Wrapper.m_PlayerMovement_Look;
-        public InputAction @Crouch => m_Wrapper.m_PlayerMovement_Crouch;
-        public InputAction @Sprint => m_Wrapper.m_PlayerMovement_Sprint;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
+        public PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_Player_Move;
+        public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @Look => m_Wrapper.m_Player_Look;
+        public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
+        public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
+        public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
+        public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerMovementActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerMovementActions instance)
+        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerActions instance)
         {
-            if (m_Wrapper.m_PlayerMovementActionsCallbackInterface != null)
+            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
-                @Move.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnMove;
-                @Jump.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnJump;
-                @Jump.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnJump;
-                @Jump.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnJump;
-                @Look.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnLook;
-                @Look.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnLook;
-                @Look.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnLook;
-                @Crouch.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnCrouch;
-                @Crouch.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnCrouch;
-                @Crouch.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnCrouch;
-                @Sprint.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnSprint;
-                @Sprint.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnSprint;
-                @Sprint.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnSprint;
+                @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
+                @Crouch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
+                @Crouch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
+                @Crouch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
+                @Sprint.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
+                @Sprint.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
+                @Sprint.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
+                @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
             }
-            m_Wrapper.m_PlayerMovementActionsCallbackInterface = instance;
+            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Move.started += instance.OnMove;
@@ -455,16 +503,20 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Sprint.started += instance.OnSprint;
                 @Sprint.performed += instance.OnSprint;
                 @Sprint.canceled += instance.OnSprint;
+                @Shoot.started += instance.OnShoot;
+                @Shoot.performed += instance.OnShoot;
+                @Shoot.canceled += instance.OnShoot;
             }
         }
     }
-    public PlayerMovementActions @PlayerMovement => new PlayerMovementActions(this);
-    public interface IPlayerMovementActions
+    public PlayerActions @Player => new PlayerActions(this);
+    public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
     }
 }
