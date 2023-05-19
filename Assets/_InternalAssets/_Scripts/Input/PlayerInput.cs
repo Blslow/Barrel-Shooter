@@ -36,6 +36,7 @@ public class PlayerInput : MonoBehaviour
         playerMovementActions.Enable();
         playerMovementActions.Jump.performed += Jump;
         playerMovementActions.Crouch.performed += Crouch;
+        playerMovementActions.Crouch.canceled += Crouch;
         playerMovementActions.Sprint.performed += Sprint;
         playerMovementActions.Sprint.canceled += Sprint;
     }
@@ -45,6 +46,7 @@ public class PlayerInput : MonoBehaviour
         playerMovementActions.Disable();
         playerMovementActions.Jump.performed -= Jump;
         playerMovementActions.Crouch.performed -= Crouch;
+        playerMovementActions.Crouch.canceled -= Crouch;
         playerMovementActions.Sprint.performed -= Sprint;
         playerMovementActions.Sprint.canceled -= Sprint;
     }

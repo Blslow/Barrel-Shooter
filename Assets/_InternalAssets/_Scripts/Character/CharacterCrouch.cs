@@ -1,12 +1,18 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CharacterCrouch : MonoBehaviour
 {
     private CharacterController characterController;
 
+    //private bool isSprinting = false;
     private bool isCrouching = false;
     private bool lerpCrouch = false;
     private float crouchTimer = 0;
+
+    [Header("Events")]
+    [SerializeField]
+    private UnityEvent<bool> OnCrouch;
 
     private void Awake()
     {
@@ -36,6 +42,7 @@ public class CharacterCrouch : MonoBehaviour
     public void Crouch()
     {
         isCrouching = !isCrouching;
+        OnCrouch?.Invoke(isCrouching);
         crouchTimer = 0;
         lerpCrouch = true;
     }

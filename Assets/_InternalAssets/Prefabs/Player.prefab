@@ -137,7 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  sprintingSpeed: 8
+  sprintIncreaseMovementSpeedBy: 3
+  crouchDecreaseMovementSpeedBy: 3
   gravity: -10
   jumpHeight: 0.5
 --- !u!114 &1072977684040955215
@@ -152,6 +153,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f83abe99015f846a1e716b23874f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnCrouch:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3534332060693431813}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: ToggleCrouchSpeed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5576171083617203237
 MonoBehaviour:
   m_ObjectHideFlags: 0

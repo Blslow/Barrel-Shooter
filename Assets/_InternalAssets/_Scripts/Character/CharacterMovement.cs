@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class CharacterMovement : MonoBehaviour
 
     private bool isGrounded = false;
     private bool isSprinting = false;
+    //private bool isCrouching = false;
 
     private float speed = 5f;
 
@@ -16,11 +18,17 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private float movementSpeed = 5f;
     [SerializeField]
-    private float sprintingSpeed = 8f;
+    private float sprintIncreaseMovementSpeedBy = 3f;
+    [SerializeField]
+    private float crouchDecreaseMovementSpeedBy = 3f;
     [SerializeField]
     private float gravity = -10f;
     [SerializeField]
     private float jumpHeight = 1f;
+
+    //[Header("Events")]
+    //[SerializeField]
+    //private UnityEvent<bool> OnSprint;
 
     public Vector2 MovementInput
     { 
@@ -31,6 +39,8 @@ public class CharacterMovement : MonoBehaviour
             movementInput = value;
         }
     }
+
+    //public bool IsCrouching { get => isCrouching; set => isCrouching = value; }
 
     private void Start()
     {
@@ -75,9 +85,19 @@ public class CharacterMovement : MonoBehaviour
     public void Sprint()
     {
         isSprinting = !isSprinting;
+
         if (isSprinting)
-            speed = sprintingSpeed;
+            speed += sprintIncreaseMovementSpeedBy;
         else
-            speed = movementSpeed;
+            speed -= sprintIncreaseMovementSpeedBy;
+    }
+
+    public void ToggleCrouchSpeed(bool isCrouching)
+    {
+        if (isCrouching)
+            speed -= crouchDecreaseMovementSpeedBy;
+        else
+            speed += crouchDecreaseMovementSpeedBy;
+
     }
 }
