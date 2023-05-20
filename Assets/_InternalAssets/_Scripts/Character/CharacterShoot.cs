@@ -16,9 +16,13 @@ public class CharacterShoot : MonoBehaviour
     [SerializeField]
     private float range = 100f;
     [SerializeField]
-    private float fireRate = 3f;
+    private float fireRate = 6f;
 
-    private bool canShoot = true;
+    [SerializeField]
+    private Gun currentGun;
+
+    [SerializeField]
+    private List<GameObject> availableGuns = new();
 
     private Coroutine fireCoroutine;
     private WaitForSeconds rapidFireWait;
