@@ -19,7 +19,9 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     private UnityEvent OnSprintInput;
     [SerializeField]
-    private UnityEvent OnShootInput;
+    private UnityEvent OnStartShootingInput;
+    [SerializeField]
+    private UnityEvent OnStopShootingInput;
 
     //[Header("Input Actions")]
     //[SerializeField]
@@ -41,7 +43,8 @@ public class PlayerInput : MonoBehaviour
         playerActions.Crouch.canceled += Crouch;
         playerActions.Sprint.performed += Sprint;
         playerActions.Sprint.canceled += Sprint;
-        playerActions.Shoot.performed += Shoot;
+        playerActions.Shoot.performed += StartShooting;
+        playerActions.Shoot.canceled += StopShooting;
     }
 
     private void OnDisable()
@@ -52,7 +55,8 @@ public class PlayerInput : MonoBehaviour
         playerActions.Crouch.canceled -= Crouch;
         playerActions.Sprint.performed -= Sprint;
         playerActions.Sprint.canceled -= Sprint;
-        playerActions.Shoot.performed -= Shoot;
+        playerActions.Shoot.performed -= StartShooting;
+        playerActions.Shoot.canceled -= StopShooting;
     }
 
     private void Update()
@@ -80,8 +84,13 @@ public class PlayerInput : MonoBehaviour
         OnSprintInput?.Invoke();
     }
 
-    private void Shoot(InputAction.CallbackContext obj)
+    private void StartShooting(InputAction.CallbackContext obj)
     {
-        OnShootInput?.Invoke();
+        OnStartShootingInput?.Invoke();
+    }
+
+    private void StopShooting(InputAction.CallbackContext obj)
+    {
+        OnStopShootingInput?.Invoke();
     }
 }
