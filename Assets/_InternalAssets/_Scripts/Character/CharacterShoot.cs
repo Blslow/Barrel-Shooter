@@ -12,17 +12,22 @@ public class CharacterShoot : MonoBehaviour
     private GameObject impactEffect;
 
     [SerializeField]
-    private float damage = 10f;
-    [SerializeField]
     private float range = 100f;
+    
     [SerializeField]
-    private float fireRate = 6f;
+    private float fireRate = 0f;
+    [SerializeField]
+    private float damage = 0f;
+    [SerializeField]
+    private float maxAmmo = 0f;
+    [SerializeField]
+    private float ammo = 0f;
 
     [SerializeField]
     private Gun currentGun;
 
-    [SerializeField]
-    private List<GameObject> availableGuns = new();
+    //[SerializeField]
+    //private List<GameObject> availableGuns = new();
 
     private Coroutine fireCoroutine;
     private WaitForSeconds rapidFireWait;
@@ -30,6 +35,21 @@ public class CharacterShoot : MonoBehaviour
     private void Awake()
     {
         rapidFireWait = new WaitForSeconds(1 / fireRate);
+    }
+
+    private void Start()
+    {
+        UpdateCurrentGunStats();
+        ammo = maxAmmo;
+    }
+
+    private void OnEnable()
+    {
+        WeaponSwitcher.OnWeaponSwitch += UpdateCurrentGun;
+    }
+    private void OnDisable()
+    {
+        WeaponSwitcher.OnWeaponSwitch -= UpdateCurrentGun;
     }
 
     public void StartShooting()
@@ -70,13 +90,6 @@ public class CharacterShoot : MonoBehaviour
         ObjectPooler.ReturnGameObject(gameObject);
     }
 
-    //private IEnumerator WaitBeforeNextShoot()
-    //{
-    //    canShoot = false;
-    //    yield return rapidFireWait;
-    //    canShoot = true;
-    //}
-
     private IEnumerator RapidFire()
     {
         while(true)
@@ -84,5 +97,23 @@ public class CharacterShoot : MonoBehaviour
             Shoot();
             yield return rapidFireWait;
         }
+    }
+    
+    private void UpdateCurrentGunStats()
+    {
+        muzzleFlash = currentGun.MuzzleFlash;
+        impactEffect = currentGun.ImpactEffect;
+        fireRate = currentGun.FireRate;
+        damage = currentGun.Damage;
+        maxAmmo = currentGun.MaxAmmo;
+        rapidFireWait = new WaitForSeconds(1 / fireRate);
+    }
+
+    private void UpdateCurrentGun(Gun gun)
+    {
+        currentGun.Ammo = ammo;
+        currentGun = gun;
+        ammo = currentGun.Ammo;
+        UpdateCurrentGunStats();
     }
 }

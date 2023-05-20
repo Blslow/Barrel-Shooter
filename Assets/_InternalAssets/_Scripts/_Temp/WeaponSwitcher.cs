@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,13 +12,15 @@ public class WeaponSwitcher : MonoBehaviour
 
     private int currentGunIndex;
 
+    public static event Action<Gun> OnWeaponSwitch;
+
     public void SwitchWeapon(float scrollValue)
     {
-        if (availableGuns.Count <= 1)
+        if (availableGuns.Count <= 1 || scrollValue == 0)
             return;
 
-        if (scrollValue != 0)
-            currentGun.SetActive(false);
+        //if (scrollValue != 0)
+        currentGun.SetActive(false);
 
         if (scrollValue > 0)
         {
@@ -44,5 +47,6 @@ public class WeaponSwitcher : MonoBehaviour
         availableGuns[currentGunIndex].SetActive(true);
         currentGun = availableGuns[currentGunIndex];
 
+        OnWeaponSwitch?.Invoke(currentGun.GetComponent<Gun>());
     }
 }
