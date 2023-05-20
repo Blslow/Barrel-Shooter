@@ -22,6 +22,8 @@ public class PlayerInput : MonoBehaviour
     private UnityEvent OnStartShootingInput;
     [SerializeField]
     private UnityEvent OnStopShootingInput;
+    [SerializeField]
+    private UnityEvent<float> OnMouseScroll;
 
     //[Header("Input Actions")]
     //[SerializeField]
@@ -45,6 +47,7 @@ public class PlayerInput : MonoBehaviour
         playerActions.Sprint.canceled += Sprint;
         playerActions.Shoot.performed += StartShooting;
         playerActions.Shoot.canceled += StopShooting;
+        playerActions.MouseScrollY.performed += SwitchWeapon;
     }
 
     private void OnDisable()
@@ -57,6 +60,7 @@ public class PlayerInput : MonoBehaviour
         playerActions.Sprint.canceled -= Sprint;
         playerActions.Shoot.performed -= StartShooting;
         playerActions.Shoot.canceled -= StopShooting;
+        playerActions.MouseScrollY.performed -= SwitchWeapon;
     }
 
     private void Update()
@@ -92,5 +96,10 @@ public class PlayerInput : MonoBehaviour
     private void StopShooting(InputAction.CallbackContext obj)
     {
         OnStopShootingInput?.Invoke();
+    }
+
+    private void SwitchWeapon(InputAction.CallbackContext obj)
+    {
+        OnMouseScroll?.Invoke(obj.ReadValue<float>());
     }
 }

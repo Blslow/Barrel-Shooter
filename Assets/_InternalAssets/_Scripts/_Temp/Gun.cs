@@ -8,5 +8,6 @@ public class Gun : MonoBehaviour
     private float fireRate = 6f;
     [SerializeField]
     private float damage = 10f;
-
+    [SerializeField]
+    private List<TargetMaterialType> destroyableMaterials = new();
 }

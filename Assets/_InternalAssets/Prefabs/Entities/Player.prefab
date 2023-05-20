@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565296842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.071, z: 0.205}
+  m_LocalPosition: {x: 0.003, y: 0.072, z: 0.178}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565296842}
   serializedVersion: 8
-  lengthInSec: 0.2
+  lengthInSec: 0.1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -50,7 +50,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -977,7 +977,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 30
+        scalar: 5
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -5451,6 +5451,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnMouseScroll:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 450423129}
+        m_TargetAssemblyTypeName: WeaponSwitcher, Assembly-CSharp
+        m_MethodName: SwitchWeapon
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3534332060693431813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6057,6 +6072,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8133655663464364670}
+  - component: {fileID: 450423129}
   m_Layer: 6
   m_Name: WeaponsHolder
   m_TagString: Untagged
@@ -6082,6 +6098,23 @@ Transform:
   m_Father: {fileID: 3534332061072567157}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &450423129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4938806518864903144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46679f7e3095ca844a919c21044a24bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableGuns:
+  - {fileID: 6964222882630864416}
+  - {fileID: 7741614930829392288}
+  - {fileID: 7410910840848681525}
+  currentGun: {fileID: 6964222882630864416}
 --- !u!1 &5981392348287645651
 GameObject:
   m_ObjectHideFlags: 0
@@ -6388,6 +6421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed754027452334a47a0812d27178ab5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 6
+  damage: 10
+  destroyableMaterials: 0000000005000000
 --- !u!1 &7410910840848681521
 GameObject:
   m_ObjectHideFlags: 0
@@ -6603,6 +6639,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed754027452334a47a0812d27178ab5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 6
+  damage: 10
+  destroyableMaterials: 0300000004000000
 --- !u!1 &7410910840848681527
 GameObject:
   m_ObjectHideFlags: 0
@@ -7489,6 +7528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed754027452334a47a0812d27178ab5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 6
+  damage: 10
+  destroyableMaterials: 0100000002000000
 --- !u!1 &7741628572561854944
 GameObject:
   m_ObjectHideFlags: 0

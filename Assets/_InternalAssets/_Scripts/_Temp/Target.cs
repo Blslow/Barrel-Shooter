@@ -4,6 +4,8 @@ public class Target : MonoBehaviour
 {
     [SerializeField]
     private float health = 50f;
+    [SerializeField]
+    private TargetMaterialType materialType;
 
     public void TakeDamage(float amount)
     {
@@ -18,4 +20,14 @@ public class Target : MonoBehaviour
     {
         Destroy(gameObject);
     }
+}
+
+public enum TargetMaterialType
+{
+    WOOD,
+    SILVER,
+    GOLD,
+    PLATINUM,
+    DIAMOND,
+    URANIUM,
 }

@@ -80,6 +80,42 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PickWeapon1"",
+                    ""type"": ""Button"",
+                    ""id"": ""98a60095-1312-4f2d-ba7a-13390508a820"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PickWeapon2"",
+                    ""type"": ""Button"",
+                    ""id"": ""0890697a-3edd-4fa1-893b-628a8d7c9048"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PickWeapon3"",
+                    ""type"": ""Button"",
+                    ""id"": ""0ec951e6-fabc-43cf-a84b-f56601148df3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MouseScrollY"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""ea5ffa47-8db8-4cd4-9e5d-44841213af7e"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -368,6 +404,50 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4fee1613-4f40-440b-829c-ea500510dada"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickWeapon1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a3f49f95-c3dc-4fac-8a1e-cfd4c1e1611d"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickWeapon2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7b4f354c-ad9d-47a2-bc16-780df1640e00"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickWeapon3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""702a4f8d-a20a-42a0-9fc4-3fd52de352c7"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseScrollY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -382,6 +462,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
+        m_Player_PickWeapon1 = m_Player.FindAction("PickWeapon1", throwIfNotFound: true);
+        m_Player_PickWeapon2 = m_Player.FindAction("PickWeapon2", throwIfNotFound: true);
+        m_Player_PickWeapon3 = m_Player.FindAction("PickWeapon3", throwIfNotFound: true);
+        m_Player_MouseScrollY = m_Player.FindAction("MouseScrollY", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -447,6 +531,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_Shoot;
+    private readonly InputAction m_Player_PickWeapon1;
+    private readonly InputAction m_Player_PickWeapon2;
+    private readonly InputAction m_Player_PickWeapon3;
+    private readonly InputAction m_Player_MouseScrollY;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -457,6 +545,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
+        public InputAction @PickWeapon1 => m_Wrapper.m_Player_PickWeapon1;
+        public InputAction @PickWeapon2 => m_Wrapper.m_Player_PickWeapon2;
+        public InputAction @PickWeapon3 => m_Wrapper.m_Player_PickWeapon3;
+        public InputAction @MouseScrollY => m_Wrapper.m_Player_MouseScrollY;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -484,6 +576,18 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @PickWeapon1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickWeapon1;
+                @PickWeapon1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickWeapon1;
+                @PickWeapon1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickWeapon1;
+                @PickWeapon2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickWeapon2;
+                @PickWeapon2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickWeapon2;
+                @PickWeapon2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickWeapon2;
+                @PickWeapon3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickWeapon3;
+                @PickWeapon3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickWeapon3;
+                @PickWeapon3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickWeapon3;
+                @MouseScrollY.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouseScrollY;
+                @MouseScrollY.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouseScrollY;
+                @MouseScrollY.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouseScrollY;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -506,6 +610,18 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
+                @PickWeapon1.started += instance.OnPickWeapon1;
+                @PickWeapon1.performed += instance.OnPickWeapon1;
+                @PickWeapon1.canceled += instance.OnPickWeapon1;
+                @PickWeapon2.started += instance.OnPickWeapon2;
+                @PickWeapon2.performed += instance.OnPickWeapon2;
+                @PickWeapon2.canceled += instance.OnPickWeapon2;
+                @PickWeapon3.started += instance.OnPickWeapon3;
+                @PickWeapon3.performed += instance.OnPickWeapon3;
+                @PickWeapon3.canceled += instance.OnPickWeapon3;
+                @MouseScrollY.started += instance.OnMouseScrollY;
+                @MouseScrollY.performed += instance.OnMouseScrollY;
+                @MouseScrollY.canceled += instance.OnMouseScrollY;
             }
         }
     }
@@ -518,5 +634,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnCrouch(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnPickWeapon1(InputAction.CallbackContext context);
+        void OnPickWeapon2(InputAction.CallbackContext context);
+        void OnPickWeapon3(InputAction.CallbackContext context);
+        void OnMouseScrollY(InputAction.CallbackContext context);
     }
 }
