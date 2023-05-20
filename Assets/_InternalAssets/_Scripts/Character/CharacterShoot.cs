@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class CharacterShoot : MonoBehaviour
 {
     [SerializeField]
     private Camera cam;
+
     [SerializeField]
     private ParticleSystem muzzleFlash;
     [SerializeField]
@@ -13,7 +15,9 @@ public class CharacterShoot : MonoBehaviour
 
     [SerializeField]
     private float range = 100f;
-    
+
+    [SerializeField]
+    private bool autoFire;
     [SerializeField]
     private float fireRate = 0f;
     [SerializeField]
@@ -23,6 +27,17 @@ public class CharacterShoot : MonoBehaviour
     [SerializeField]
     private float ammo = 0f;
 
+    private float recoilAmountY = 3.2f;
+    private float recoilAmountX = 4f;
+    private float currentRecoilXPos;
+    private float currentRecoilYPos;
+    private float maxRecoilTime = 4f;
+    private float timePressed;
+    private bool recoilPositiveYOnly;
+
+    private bool isReloading = false;
+
+
     [SerializeField]
     private Gun currentGun;
 
@@ -31,6 +46,8 @@ public class CharacterShoot : MonoBehaviour
 
     private Coroutine fireCoroutine;
     private WaitForSeconds rapidFireWait;
+
+    public static event Action<Vector2> OnShoot;
 
     private void Awake()
     {
@@ -54,18 +71,35 @@ public class CharacterShoot : MonoBehaviour
 
     public void StartShooting()
     {
-        fireCoroutine = StartCoroutine(RapidFire());
+        //if (ammo <= 0)
+        //{
+        //    StartCoroutine(ReloadAmmo());
+        //    return;
+        //}
+
+        if (autoFire)
+            fireCoroutine = StartCoroutine(RapidFire());
+        else
+            Shoot();
     }
     public void StopShooting()
     {
-        if (fireCoroutine != null)
+        if (fireCoroutine != null && autoFire)
             StopCoroutine(fireCoroutine);
     }
 
     private void Shoot()
     {
+        if (ammo <= 0)
+        {
+            StartCoroutine(ReloadAmmo());
+            return;
+        }
+
         if (muzzleFlash)
             muzzleFlash.Play();
+
+        ammo--;
 
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
@@ -82,6 +116,35 @@ public class CharacterShoot : MonoBehaviour
 
             StartCoroutine(ReturnObjectAfterSeconds(impact, 1f));
         }
+
+        OnShoot?.Invoke(Recoil(recoilPositiveYOnly));
+    }
+
+    private IEnumerator ReloadAmmo()
+    {
+        if (isReloading)
+        {
+            yield return null;
+        }
+        else
+        {
+            Debug.Log("Reloading ammo");
+            isReloading = true;
+            yield return new WaitForSeconds(1.7f);
+            ammo = maxAmmo;
+            isReloading = false;
+        }
+    }
+
+    private Vector2 Recoil(bool positiveYOnly)
+    {
+        currentRecoilXPos = ((UnityEngine.Random.value - .5f) / 2) * recoilAmountX;
+        currentRecoilYPos = ((UnityEngine.Random.value - .5f) / 2) * (timePressed >= maxRecoilTime ? recoilAmountY / 4 : recoilAmountY);
+        //Debug.Log(currentRecoilXPos + ", " + currentRecoilYPos);
+        if (positiveYOnly)
+            return new Vector2(currentRecoilXPos, Math.Abs(currentRecoilYPos));
+        else
+            return new Vector2(currentRecoilXPos, currentRecoilYPos);
     }
 
     private IEnumerator ReturnObjectAfterSeconds(GameObject gameObject, float time)
@@ -103,17 +166,24 @@ public class CharacterShoot : MonoBehaviour
     {
         muzzleFlash = currentGun.MuzzleFlash;
         impactEffect = currentGun.ImpactEffect;
+        autoFire = currentGun.AutoFire;
         fireRate = currentGun.FireRate;
         damage = currentGun.Damage;
         maxAmmo = currentGun.MaxAmmo;
+        recoilAmountY = currentGun.RecoilAmountY;
+        recoilAmountX = currentGun.RecoilAmountX;
+        recoilPositiveYOnly = currentGun.RecoilPositiveYOnly;
         rapidFireWait = new WaitForSeconds(1 / fireRate);
     }
 
     private void UpdateCurrentGun(Gun gun)
     {
+        StopShooting();
         currentGun.Ammo = ammo;
         currentGun = gun;
         ammo = currentGun.Ammo;
         UpdateCurrentGunStats();
+        StopAllCoroutines();
+        isReloading = false;
     }
 }

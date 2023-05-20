@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
+    //private float recoilAmountY = 3.2f;
+    //private float recoilAmountX = 4f;
+    //private float currentRecoilXPos;
+    //private float currentRecoilYPos;
+    //private float maxRecoilTime = 4f;
+    //private float timePressed;
+
     private float xRotation = 0f;
 
     [SerializeField]
@@ -11,6 +18,16 @@ public class PlayerLook : MonoBehaviour
     private float xSensitivity = 120f;
     [SerializeField]
     private float ySensitivity = 120f;
+
+    private void OnEnable()
+    {
+        /// recoil
+        CharacterShoot.OnShoot += ProcessLook;
+    }
+    private void OnDisable()
+    {
+        CharacterShoot.OnShoot -= ProcessLook;
+    }
 
     public void ProcessLook(Vector2 input)
     {
@@ -24,4 +41,12 @@ public class PlayerLook : MonoBehaviour
 
         transform.parent.Rotate(Vector3.up * (mouseX * Time.deltaTime) * xSensitivity);
     }
+
+    //private void Recoil(Vector2 value)
+    //{
+    //    currentRecoilXPos = ((Random.value - .5f) / 2) * recoilAmountX;
+    //    currentRecoilYPos = ((Random.value - .5f) / 2) * (timePressed >= maxRecoilTime ? recoilAmountY / 4 : recoilAmountY);
+    //    //Debug.Log(currentRecoilXPos + ", " + currentRecoilYPos);
+    //    ProcessLook(new Vector2(currentRecoilXPos, currentRecoilYPos));
+    //}
 }
