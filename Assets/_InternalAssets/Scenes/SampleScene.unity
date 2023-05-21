@@ -135,6 +135,10 @@ PrefabInstance:
       value: UraniumBarrel (6)
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 3
       objectReference: {fileID: 0}
@@ -218,6 +222,10 @@ PrefabInstance:
       value: UraniumBarrel (12)
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 3
       objectReference: {fileID: 0}
@@ -299,6 +307,10 @@ PrefabInstance:
     - target: {fileID: 6773647609860294554, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: m_Name
       value: UraniumBarrel (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -596,6 +608,10 @@ PrefabInstance:
     - target: {fileID: 6773647609860294554, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: m_Name
       value: UraniumBarrel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -5868,6 +5884,10 @@ PrefabInstance:
       value: UraniumBarrel (10)
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 3
       objectReference: {fileID: 0}
@@ -6047,6 +6067,10 @@ PrefabInstance:
     - target: {fileID: 6773647609860294554, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: m_Name
       value: UraniumBarrel (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6344,6 +6368,10 @@ PrefabInstance:
     - target: {fileID: 6773647609860294554, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: m_Name
       value: UraniumBarrel (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6758,6 +6786,10 @@ PrefabInstance:
       value: UraniumBarrel (13)
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 3
       objectReference: {fileID: 0}
@@ -6865,7 +6897,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 7, y: 7}
+  m_SizeDelta: {x: 4, y: 4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &885466032
 MonoBehaviour:
@@ -6915,6 +6947,10 @@ PrefabInstance:
     - target: {fileID: 6773647609860294554, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: m_Name
       value: UraniumBarrel (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6998,6 +7034,10 @@ PrefabInstance:
     - target: {fileID: 6773647609860294554, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: m_Name
       value: UraniumBarrel (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -12104,6 +12144,10 @@ PrefabInstance:
       value: UraniumBarrel (7)
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 3
       objectReference: {fileID: 0}
@@ -12366,6 +12410,10 @@ PrefabInstance:
       value: UraniumBarrel (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 3
       objectReference: {fileID: 0}
@@ -12571,7 +12619,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 12, y: 12}
+  m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1144473055
 MonoBehaviour:
@@ -13371,6 +13419,10 @@ PrefabInstance:
       value: UraniumBarrel (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 3
       objectReference: {fileID: 0}
@@ -13765,6 +13817,10 @@ PrefabInstance:
       value: UraniumBarrel (4)
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 3
       objectReference: {fileID: 0}
@@ -13943,6 +13999,10 @@ PrefabInstance:
     - target: {fileID: 6773647609860294554, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: m_Name
       value: UraniumBarrel (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -24012,7 +24072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2619113878308309499, guid: e486b8478c4e99e41bb8299034a218a0, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2619113878308309499, guid: e486b8478c4e99e41bb8299034a218a0, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -24063,7 +24123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198147854091568044, guid: 9815ffbb41efe12438750064d6bbd997, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198147854091568044, guid: 9815ffbb41efe12438750064d6bbd997, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -24210,7 +24270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3402017624770620450, guid: dcdc67ecf840995469ec467aa94137d2, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3402017624770620450, guid: dcdc67ecf840995469ec467aa94137d2, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -24305,7 +24365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5753486853205922618, guid: 94bd290a468d5eb409f69dbd51a97afa, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5753486853205922618, guid: 94bd290a468d5eb409f69dbd51a97afa, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -24707,7 +24767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2854366028607611831, guid: cb4b5f488a9dbd14bb0ee289302e97ab, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2854366028607611831, guid: cb4b5f488a9dbd14bb0ee289302e97ab, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -24755,6 +24815,10 @@ PrefabInstance:
     - target: {fileID: 6773647609860294554, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: m_Name
       value: UraniumBarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
