@@ -348,6 +348,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: UraniumBarrel (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 373639513}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnExplosionEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HandleExplosionEffects, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084018, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -392,7 +412,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8019021990754407731, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
 --- !u!4 &84504607 stripped
 Transform:
@@ -5473,6 +5494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 373639512}
   - component: {fileID: 373639511}
+  - component: {fileID: 373639513}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -5507,6 +5529,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &373639513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373639510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 801650ad75d9f0344a019291ab26e3e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionsEffectsList:
+  - {fileID: 5094140667376773142, guid: 470a85934b2b9084b8feb4b6e9ed9ce3, type: 3}
+  - {fileID: 1192922239922780378, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
 --- !u!1 &401140560
 GameObject:
   m_ObjectHideFlags: 0
@@ -11102,6 +11139,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: UraniumBarrel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 373639513}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnExplosionEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HandleExplosionEffects, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084018, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -11146,7 +11203,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8019021990754407731, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
 --- !u!4 &1107220610 stripped
 Transform:
@@ -21973,6 +22031,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1171619870}
     m_Modifications:
+    - target: {fileID: 1515303322368021369, guid: e486b8478c4e99e41bb8299034a218a0, type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 1192922239922780378, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
     - target: {fileID: 2616290978845475280, guid: e486b8478c4e99e41bb8299034a218a0, type: 3}
       propertyPath: m_Name
       value: GoldBarrel
@@ -22021,7 +22083,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2619113878308309499, guid: e486b8478c4e99e41bb8299034a218a0, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2619113878308309499, guid: e486b8478c4e99e41bb8299034a218a0, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2619113878308309499, guid: e486b8478c4e99e41bb8299034a218a0, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 373639513}
+    - target: {fileID: 2619113878308309499, guid: e486b8478c4e99e41bb8299034a218a0, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2619113878308309499, guid: e486b8478c4e99e41bb8299034a218a0, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnExplosionEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2619113878308309499, guid: e486b8478c4e99e41bb8299034a218a0, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HandleExplosionEffects, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2619113878308309499, guid: e486b8478c4e99e41bb8299034a218a0, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2619113878308309499, guid: e486b8478c4e99e41bb8299034a218a0, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1515303322368021369, guid: e486b8478c4e99e41bb8299034a218a0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e486b8478c4e99e41bb8299034a218a0, type: 3}
 --- !u!4 &1994605109868183575 stripped
 Transform:
@@ -22038,6 +22133,38 @@ PrefabInstance:
     - target: {fileID: 191946791075859335, guid: 9815ffbb41efe12438750064d6bbd997, type: 3}
       propertyPath: m_Name
       value: SilverBarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 198147854091568044, guid: 9815ffbb41efe12438750064d6bbd997, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198147854091568044, guid: 9815ffbb41efe12438750064d6bbd997, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 198147854091568044, guid: 9815ffbb41efe12438750064d6bbd997, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 373639513}
+    - target: {fileID: 198147854091568044, guid: 9815ffbb41efe12438750064d6bbd997, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198147854091568044, guid: 9815ffbb41efe12438750064d6bbd997, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnExplosionEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 198147854091568044, guid: 9815ffbb41efe12438750064d6bbd997, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HandleExplosionEffects, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 198147854091568044, guid: 9815ffbb41efe12438750064d6bbd997, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198147854091568044, guid: 9815ffbb41efe12438750064d6bbd997, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 198147854091568047, guid: 9815ffbb41efe12438750064d6bbd997, type: 3}
       propertyPath: m_RootOrder
@@ -22083,7 +22210,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3738110877330151726, guid: 9815ffbb41efe12438750064d6bbd997, type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 5094140667376773142, guid: 470a85934b2b9084b8feb4b6e9ed9ce3, type: 3}
+    m_RemovedComponents:
+    - {fileID: 3738110877330151726, guid: 9815ffbb41efe12438750064d6bbd997, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9815ffbb41efe12438750064d6bbd997, type: 3}
 --- !u!4 &2093258121781549615 stripped
 Transform:
@@ -22097,6 +22229,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1171619870}
     m_Modifications:
+    - target: {fileID: 2191532715457246880, guid: dcdc67ecf840995469ec467aa94137d2, type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 1192922239922780378, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
     - target: {fileID: 3395852639482291209, guid: dcdc67ecf840995469ec467aa94137d2, type: 3}
       propertyPath: m_Name
       value: DiamondBarrel
@@ -22145,7 +22281,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3402017624770620450, guid: dcdc67ecf840995469ec467aa94137d2, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402017624770620450, guid: dcdc67ecf840995469ec467aa94137d2, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402017624770620450, guid: dcdc67ecf840995469ec467aa94137d2, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 373639513}
+    - target: {fileID: 3402017624770620450, guid: dcdc67ecf840995469ec467aa94137d2, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402017624770620450, guid: dcdc67ecf840995469ec467aa94137d2, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnExplosionEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402017624770620450, guid: dcdc67ecf840995469ec467aa94137d2, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HandleExplosionEffects, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402017624770620450, guid: dcdc67ecf840995469ec467aa94137d2, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402017624770620450, guid: dcdc67ecf840995469ec467aa94137d2, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2191532715457246880, guid: dcdc67ecf840995469ec467aa94137d2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dcdc67ecf840995469ec467aa94137d2, type: 3}
 --- !u!4 &2273195846686356352 stripped
 Transform:
@@ -22207,6 +22376,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5753486853205922618, guid: 94bd290a468d5eb409f69dbd51a97afa, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5753486853205922618, guid: 94bd290a468d5eb409f69dbd51a97afa, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5753486853205922618, guid: 94bd290a468d5eb409f69dbd51a97afa, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 373639513}
+    - target: {fileID: 5753486853205922618, guid: 94bd290a468d5eb409f69dbd51a97afa, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5753486853205922618, guid: 94bd290a468d5eb409f69dbd51a97afa, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnExplosionEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5753486853205922618, guid: 94bd290a468d5eb409f69dbd51a97afa, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HandleExplosionEffects, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5753486853205922618, guid: 94bd290a468d5eb409f69dbd51a97afa, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5753486853205922618, guid: 94bd290a468d5eb409f69dbd51a97afa, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117532681407809976, guid: 94bd290a468d5eb409f69dbd51a97afa, type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 1192922239922780378, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94bd290a468d5eb409f69dbd51a97afa, type: 3}
 --- !u!4 &3525308820086878723
@@ -22437,6 +22642,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5753486853205922617, guid: 94bd290a468d5eb409f69dbd51a97afa, type: 3}
   m_PrefabInstance: {fileID: 2749659806542446764}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8332156288069557206
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1192922239922780378, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
+      propertyPath: m_Name
+      value: ExplosionEffect2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192922239922780378, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894799583706381110, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894799583706381110, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894799583706381110, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894799583706381110, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894799583706381110, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894799583706381110, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894799583706381110, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894799583706381110, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894799583706381110, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894799583706381110, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894799583706381110, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 56d3182b128d2d2449aa6c2f07f793c2, type: 3}
 --- !u!1001 &8342100143433501505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22444,6 +22710,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1171619870}
     m_Modifications:
+    - target: {fileID: 1640216959279872309, guid: cb4b5f488a9dbd14bb0ee289302e97ab, type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 5094140667376773142, guid: 470a85934b2b9084b8feb4b6e9ed9ce3, type: 3}
     - target: {fileID: 2849272495924669340, guid: cb4b5f488a9dbd14bb0ee289302e97ab, type: 3}
       propertyPath: m_Name
       value: PlatinumBarrel
@@ -22492,7 +22762,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2854366028607611831, guid: cb4b5f488a9dbd14bb0ee289302e97ab, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854366028607611831, guid: cb4b5f488a9dbd14bb0ee289302e97ab, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854366028607611831, guid: cb4b5f488a9dbd14bb0ee289302e97ab, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 373639513}
+    - target: {fileID: 2854366028607611831, guid: cb4b5f488a9dbd14bb0ee289302e97ab, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854366028607611831, guid: cb4b5f488a9dbd14bb0ee289302e97ab, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnExplosionEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854366028607611831, guid: cb4b5f488a9dbd14bb0ee289302e97ab, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HandleExplosionEffects, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854366028607611831, guid: cb4b5f488a9dbd14bb0ee289302e97ab, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854366028607611831, guid: cb4b5f488a9dbd14bb0ee289302e97ab, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1640216959279872309, guid: cb4b5f488a9dbd14bb0ee289302e97ab, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cb4b5f488a9dbd14bb0ee289302e97ab, type: 3}
 --- !u!4 &8342100143433501506 stripped
 Transform:
@@ -22509,6 +22812,26 @@ PrefabInstance:
     - target: {fileID: 6773647609860294554, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: m_Name
       value: UraniumBarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 373639513}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnExplosionEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HandleExplosionEffects, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779831029166084017, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
+      propertyPath: OnTargetDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6779831029166084018, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
       propertyPath: m_RootOrder
@@ -22554,7 +22877,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8019021990754407731, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ef7f14c73e321b46a93f52b65c0c3a4, type: 3}
 --- !u!4 &8362386902663718348 stripped
 Transform:

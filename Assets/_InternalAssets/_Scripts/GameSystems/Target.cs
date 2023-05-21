@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +12,9 @@ public class Target : MonoBehaviour
     private GameObject damageText;
     [SerializeField]
     private UnityEvent OnTargetDestroy;
+
+    public static event Action OnTargetDestroyStaticEvent;
+    public static event Action<GameObject> OnTargetDestroyStaticEventWithReference;
 
     public TargetMaterialType MaterialType { get => materialType; }
 
@@ -33,6 +37,8 @@ public class Target : MonoBehaviour
     private void Die()
     {
         OnTargetDestroy?.Invoke();
+        OnTargetDestroyStaticEvent?.Invoke();
+        OnTargetDestroyStaticEventWithReference?.Invoke(gameObject);
         Destroy(gameObject);
     }
 }
