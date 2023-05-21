@@ -31,6 +31,8 @@ public class ObjectPooler : MonoBehaviour
     {
         GameObject newGO = Instantiate(gameObject);
         newGO.name = gameObject.name;
+        //newGO.transform.parent = GameManager.Instance.ObjectPoolerTarget.transform;
+        newGO.transform.SetParent(GameManager.Instance.ObjectPoolerTarget.transform);
         return newGO;
     }
 

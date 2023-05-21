@@ -16,9 +16,9 @@ public class Gun : MonoBehaviour
     [SerializeField]
     private float damage = 10f;
     [SerializeField]
-    private float maxAmmo = 6f;
+    private int maxAmmo = 6;
     [SerializeField]
-    private float ammo = 6f;
+    private int ammo = 6;
     [SerializeField]
     private List<TargetMaterialType> destroyableMaterials = new();
 
@@ -35,8 +35,8 @@ public class Gun : MonoBehaviour
     public bool AutoFire { get => autoFire; }
     public float FireRate { get => fireRate; }
     public float Damage { get => damage; }
-    public float MaxAmmo { get => maxAmmo; }
-    public float Ammo 
+    public int MaxAmmo { get => maxAmmo; }
+    public int Ammo 
     { 
         get => ammo;
         set

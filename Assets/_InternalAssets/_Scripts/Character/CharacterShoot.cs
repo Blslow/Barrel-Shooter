@@ -23,9 +23,9 @@ public class CharacterShoot : MonoBehaviour
     [SerializeField]
     private float damage = 0f;
     [SerializeField]
-    private float maxAmmo = 0f;
+    private int maxAmmo = 0;
     [SerializeField]
-    private float ammo = 0f;
+    private int ammo = 0;
 
     private float recoilAmountY = 3.2f;
     private float recoilAmountX = 4f;
@@ -48,6 +48,7 @@ public class CharacterShoot : MonoBehaviour
     private WaitForSeconds rapidFireWait;
 
     public static event Action<Vector2> OnShoot;
+    public static event Action<int, int> OnShootWithAmmoAmountReference;
     public static event Action OnReload;
     public static event Action OnStopReloading;
 
@@ -60,6 +61,7 @@ public class CharacterShoot : MonoBehaviour
     {
         UpdateCurrentGunStats();
         ammo = maxAmmo;
+        OnShootWithAmmoAmountReference?.Invoke(ammo, maxAmmo);
     }
 
     private void OnEnable()
@@ -125,6 +127,7 @@ public class CharacterShoot : MonoBehaviour
         }
 
         OnShoot?.Invoke(Recoil(recoilPositiveYOnly));
+        OnShootWithAmmoAmountReference?.Invoke(ammo, maxAmmo);
     }
 
     private IEnumerator ReloadAmmo()
@@ -143,6 +146,7 @@ public class CharacterShoot : MonoBehaviour
             yield return new WaitForSeconds(.25f);
             ammo = maxAmmo;
             isReloading = false;
+            OnShootWithAmmoAmountReference?.Invoke(ammo, maxAmmo);
 
         }
     }
@@ -185,6 +189,7 @@ public class CharacterShoot : MonoBehaviour
         recoilAmountX = currentGun.RecoilAmountX;
         recoilPositiveYOnly = currentGun.RecoilPositiveYOnly;
         rapidFireWait = new WaitForSeconds(1 / fireRate);
+        OnShootWithAmmoAmountReference?.Invoke(ammo, maxAmmo);
     }
 
     private void UpdateCurrentGun(Gun gun)
