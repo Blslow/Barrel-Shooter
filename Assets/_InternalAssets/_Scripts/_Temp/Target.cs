@@ -6,9 +6,18 @@ public class Target : MonoBehaviour
     private float health = 50f;
     [SerializeField]
     private TargetMaterialType materialType;
+    [SerializeField]
+    private GameObject damageText;
 
     public void TakeDamage(float amount)
     {
+        GameObject damageIndicator = ObjectPooler.GetObject(damageText);
+        damageIndicator.name = "DamageIndicator";
+        damageIndicator.transform.position = transform.position;
+        damageIndicator.transform.rotation = Quaternion.identity;
+        damageIndicator.GetComponent<DamageIndicator>().SetDamageText(amount);
+        damageIndicator.GetComponent<DamageIndicator>().Initiate();
+
         health -= amount;
         if (health <= 0)
         {
