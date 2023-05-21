@@ -16692,8 +16692,8 @@ MonoBehaviour:
   autoFire: 0
   fireRate: 5
   damage: 20
-  maxAmmo: 18
-  ammo: 18
+  maxAmmo: 12
+  ammo: 12
   destroyableMaterials: 0300000004000000
   recoilAmountY: 12.08
   recoilAmountX: 2.8
@@ -17590,9 +17590,9 @@ MonoBehaviour:
   impactEffect: {fileID: 3834246273103979094, guid: 1d1125a891c49ce46950b298160f4a15, type: 3}
   autoFire: 1
   fireRate: 12
-  damage: 15
-  maxAmmo: 12
-  ammo: 12
+  damage: 6
+  maxAmmo: 24
+  ammo: 24
   destroyableMaterials: 0100000002000000
   recoilAmountY: 3.76
   recoilAmountX: 6.66

@@ -108,7 +108,12 @@ public class CharacterShoot : MonoBehaviour
         {
             Target target = hit.transform.GetComponent<Target>();
             if (target)
-                target.TakeDamage(damage);
+            {
+                if (currentGun.CanDestroy(target.MaterialType))
+                    target.TakeDamage(damage);
+                else
+                    target.TakeDamage(0);
+            }
 
             //Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             GameObject impact = ObjectPooler.GetObject(impactEffect);

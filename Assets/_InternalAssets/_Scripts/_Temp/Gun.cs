@@ -51,4 +51,12 @@ public class Gun : MonoBehaviour
     public float RecoilAmountY { get => recoilAmountY; }
     public float RecoilAmountX { get => recoilAmountX; }
     public bool RecoilPositiveYOnly { get => recoilPositiveYOnly; }
+
+    public bool CanDestroy(TargetMaterialType materialType)
+    {
+        if (destroyableMaterials.Contains(materialType))
+            return true;
+
+        return false;
+    }
 }

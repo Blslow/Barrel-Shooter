@@ -9,6 +9,8 @@ public class Target : MonoBehaviour
     [SerializeField]
     private GameObject damageText;
 
+    public TargetMaterialType MaterialType { get => materialType; }
+
     public void TakeDamage(float amount)
     {
         GameObject damageIndicator = ObjectPooler.GetObject(damageText);
