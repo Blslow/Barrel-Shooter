@@ -15233,7 +15233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6914823099614424126}
-  - component: {fileID: 3534332060693431811}
+  - component: {fileID: 7339711133380614790}
   - component: {fileID: 3534332060693431813}
   - component: {fileID: 1072977684040955215}
   - component: {fileID: 5576171083617203237}
@@ -15262,7 +15262,7 @@ Transform:
   m_Father: {fileID: 3534332061036819585}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3534332060693431811
+--- !u!114 &7339711133380614790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16000,6 +16000,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8133655663464364670}
   - component: {fileID: 450423129}
+  - component: {fileID: 3534332060693431811}
+  - component: {fileID: 3534332060693431814}
   m_Layer: 6
   m_Name: WeaponsHolder
   m_TagString: Untagged
@@ -16042,6 +16044,39 @@ MonoBehaviour:
   - {fileID: 7741614930829392288}
   - {fileID: 7410910840848681525}
   currentGun: {fileID: 6964222882630864416}
+--- !u!95 &3534332060693431811
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4938806518864903144}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3e666c4721ac49a47b6a8288067a5e49, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3534332060693431814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4938806518864903144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df86ed8181231514cbe17dd012c71d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3534332060693431811}
 --- !u!1 &5981392348287645651
 GameObject:
   m_ObjectHideFlags: 0
