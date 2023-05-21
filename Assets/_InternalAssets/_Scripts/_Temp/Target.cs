@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Target : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Target : MonoBehaviour
     private TargetMaterialType materialType;
     [SerializeField]
     private GameObject damageText;
+    [SerializeField]
+    private UnityEvent OnTargetDestroy;
 
     public TargetMaterialType MaterialType { get => materialType; }
 
@@ -29,6 +32,7 @@ public class Target : MonoBehaviour
 
     private void Die()
     {
+        OnTargetDestroy?.Invoke();
         Destroy(gameObject);
     }
 }
