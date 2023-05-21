@@ -48,6 +48,8 @@ public class CharacterShoot : MonoBehaviour
     private WaitForSeconds rapidFireWait;
 
     public static event Action<Vector2> OnShoot;
+    public static event Action OnReload;
+    public static event Action OnStopReloading;
 
     private void Awake()
     {
@@ -129,10 +131,14 @@ public class CharacterShoot : MonoBehaviour
         else
         {
             Debug.Log("Reloading ammo");
+            OnReload?.Invoke();
             isReloading = true;
             yield return new WaitForSeconds(1.7f);
+            OnStopReloading?.Invoke();
+            yield return new WaitForSeconds(.25f);
             ammo = maxAmmo;
             isReloading = false;
+
         }
     }
 
@@ -185,5 +191,6 @@ public class CharacterShoot : MonoBehaviour
         UpdateCurrentGunStats();
         StopAllCoroutines();
         isReloading = false;
+        OnStopReloading?.Invoke();
     }
 }
