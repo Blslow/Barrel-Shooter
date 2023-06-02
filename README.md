@@ -1,6 +1,5 @@
 # Barrel-Shooter  
   
-Projekt stworzony na potrzeby rekrutacji.  
 
 Do stworzenia projektu zostały użyte następujące assety:  
 https://assetstore.unity.com/packages/3d/props/stylized-wooden-barrel-pack-97797  
